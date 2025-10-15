@@ -128,14 +128,19 @@ const config: NuxtConfig = {
         name: "日本語",
         file: "ja.js",
       },
+      {
+        code: "ko",
+        name: "한국어",
+        file: "ko.js",
+      },
     ],
     detectBrowserLanguage: false,
     vueI18n: {
-      fallbackLocale: "en",
+      fallbackLocale: "ko",
     },
     lazy: true,
     langDir: "translation/",
-    defaultLocale: "en",
+    defaultLocale: "ko",
     strategy: "no_prefix",
   },
 
