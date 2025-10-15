@@ -30,7 +30,7 @@
         v-model="option.selected"
         @mouseover.native="preSelectionIndex = index"
       >
-        {{ option.text ?? option.value }}
+        {{ getTranslatedLabel(option.text ?? option.value) }}
       </BaseCheckbox>
     </div>
   </div>
@@ -95,6 +95,18 @@ export default {
       this.preSelectionIndex === 0
         ? (this.preSelectionIndex = this.optionsLength - 1)
         : this.preSelectionIndex--;
+    },
+    getTranslatedLabel(text) {
+      // Check if Korean translation exists for this label
+      const labelTranslations = this.$t('labelTranslations');
+      if (labelTranslations && typeof labelTranslations === 'object') {
+        const lowerText = text.toLowerCase();
+        if (labelTranslations[lowerText]) {
+          return labelTranslations[lowerText];
+        }
+      }
+      // Return original text if no translation found
+      return text;
     },
   },
 };

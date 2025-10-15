@@ -81,7 +81,7 @@
               class="key"
               v-text="keyboards[option.id]"
             />
-            <span class="label-text__text">{{ option.text }}</span>
+            <span class="label-text__text">{{ getTranslatedLabel(option.text) }}</span>
             <span v-if="isSuggested(option)" class="label-text__suggestion">
               <svgicon class="label-text__suggestion__icon" name="suggestion" />
               <span
@@ -352,6 +352,18 @@ export default {
     },
     getSuggestedAgent(option) {
       return this.suggestion?.getSuggestion(option.value)?.agent;
+    },
+    getTranslatedLabel(text) {
+      // Check if Korean translation exists for this label
+      const labelTranslations = this.$t('labelTranslations');
+      if (labelTranslations && typeof labelTranslations === 'object') {
+        const lowerText = text.toLowerCase();
+        if (labelTranslations[lowerText]) {
+          return labelTranslations[lowerText];
+        }
+      }
+      // Return original text if no translation found
+      return text;
     },
   },
   setup(props) {

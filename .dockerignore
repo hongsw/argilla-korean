@@ -1,5 +1,8 @@
-# Ignore everything
+# Ignore everything except what we need for the build
 **
+
+# Include built frontend only
+!argilla-frontend/dist/**
 
 # Distribution packages
 !dist/*.whl

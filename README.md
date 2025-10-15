@@ -35,6 +35,18 @@ If you're interested in helping maintain or extend this project, we'd love to he
 </a>
 </p>
 
+# 🇰🇷 Korean Support / 한국어 지원
+
+**[📖 한국어 문서 보기 (Korean Documentation)](README_KOR.md)**
+
+This fork includes **complete Korean language support** for Argilla:
+- ✅ Full UI translation (400+ strings)
+- ✅ Korean labels support (긍정/부정/중립)
+- ✅ Default language set to Korean
+- ✅ CLI tools for data export (JSONL, CSV, SQL)
+
+---
+
 Argilla is a collaboration tool for AI engineers and domain experts who need to build high-quality datasets for their projects.
 
 If you just want to get started, [deploy Argilla on Hugging Face Spaces](https://argilla-io.github.io/argilla/latest/getting_started/quickstart/). Curious, and want to know more? Read our [documentation](https://argilla-io.github.io/argilla/latest/).
